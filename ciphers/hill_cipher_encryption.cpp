@@ -29,7 +29,7 @@ int main(){
         cout << "Enter 4 letter keyword : ";
         cin >> key;
     }
-
+    //key = "DCDF";
     cout << "Enter secret message : ";
     cin >> plainText;
 
@@ -66,7 +66,7 @@ int main(){
 
     //printMatrix(keyMatrix);
     //cout << plainText << " length is " << plainText.length();
-    cout << "Encrypted Text" << encryptedText << endl;
+    cout << "\nEncrypted Text : " << encryptedText << endl;
 
     return 0;
 }

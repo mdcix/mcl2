@@ -12,16 +12,25 @@ using namespace std;
 //     }
 // }
 
+int modInverse(int a, int m) {
+    a = a % m;
+    for (int x = 1; x < m; x++)
+        if ((a * x) % m == 1)
+            return x;
+    return -1;
+}
+
 void inverseMatrix(int (&matrix)[2][2]){
     int a = matrix[0][0];
     int b = matrix[0][1];
     int c = matrix[1][0];
     int d = matrix[1][1];
     int det = (a*d) - (b*c);
-    matrix[0][0] = (((d+26)%26)*3)%26;
-    matrix[0][1] = (((-b+26)%26)*3)%26;
-    matrix[1][0] = (((-c+26)%26)*3)%26;
-    matrix[1][1] = (((a+26)%26)*3)%26;
+    int newd = modInverse(det, 26);
+    matrix[0][0] = (((d+26)%26)*newd)%26;
+    matrix[0][1] = (((-b+26)%26)*newd)%26;
+    matrix[1][0] = (((-c+26)%26)*newd)%26;
+    matrix[1][1] = (((a+26)%26)*newd)%26;
     // matrix[0][0] = (matrix[0][0]*3)%26;
     // matrix[0][1] = (matrix[0][1]*3)%26;
     // matrix[1][0] = (matrix[1][0]*3)%26;
@@ -44,7 +53,7 @@ int main(){
         cout << "Enter 4 letter keyword : ";
         cin >> key;
     }
-
+    //key = "DCDF";
     cout << "Enter Encrypted Text: ";
     cin >> encryptedText;
 
@@ -83,6 +92,6 @@ int main(){
 
     //printMatrix(keyMatrix);
     //cout << encryptedText << " length is " << encryptedText.length();
-    cout << "Plain Text : " << plainText << endl;
+    cout << "\nPlain Text : " << plainText << endl;
     return 0;
 }
