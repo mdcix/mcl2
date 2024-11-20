@@ -1,0 +1,2 @@
+open the .md file in github
+press ctrl+shift+v
