@@ -4,14 +4,14 @@
 #include <string.h>
 using namespace std;
 
-// void printMatrix(int matrix[][2]){
-//     for(int i=0; i<2; i++){
-//         for(int j=0; j<2; j++){
-//             cout << matrix[i][j] << " ";
-//         }
-//         cout << endl;
-//     }
-// }
+void printMatrix(int matrix[][2]){
+    for(int i=0; i<2; i++){
+        for(int j=0; j<2; j++){
+            cout << matrix[i][j] << " ";
+        }
+        cout << endl;
+    }
+}
 
 int main(){
     string key, plainText, encryptedText;
