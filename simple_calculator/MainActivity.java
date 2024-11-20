@@ -1,4 +1,5 @@
 package com.example.labtuto;
+//Change this to your package name !!!!!!!!!!
 
 import android.os.Bundle;
 import android.view.View;
